@@ -22,8 +22,8 @@ async function loadBooks() {
         // Limpia el contenido del contenedor (elimina el mensaje de carga)
         bookContainer.innerHTML = '';
 
-        // Recorre los primeros 12 libros de los resultados obtenidos
-        data.docs.slice(0, 12).forEach(book => {
+        // Recorre los primeros 120 libros de los resultados obtenidos
+        data.docs.slice(0, 120).forEach(book => {
             // Crea un elemento 'div' para cada libro
             const bookCard = document.createElement('div');
             bookCard.className = 'book-card'; // Asigna una clase CSS para estilizar la tarjeta

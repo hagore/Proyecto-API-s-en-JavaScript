@@ -1,0 +1,121 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+/* Efecto de fondo borroso con una imagen */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./chutulu.jpg"); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px) opacity(0.5);
+    z-index: -1;
+}
+
+/* Estilo del encabezado */
+.header {
+    text-align: center;
+    background: linear-gradient(135deg, #6a93e8, #e890d3); /* Fondo degradado diagonal */
+    color: white;
+    padding: 50px 20px;
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.header .subtitle {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #f1f1f1;
+}
+
+/* Contenedor de libros */
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* Estilo de las tarjetas (como cartas) */
+.book-card {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+/* Bordes decorativos adicionales para las tarjetas */
+.book-card::before, .book-card::after {
+    content: '';
+    position: absolute; /* Posicionamiento absoluto respecto a la tarjeta */
+    border-radius: 15px;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px dashed rgba(200, 200, 200, 0.6);/* Borde punteado decorativo */
+    z-index: -1;
+}
+/* Efecto al pasar el mouse sobre la tarjeta */
+.book-card:hover {
+    transform: translateY(-10px); /* Eleva la tarjeta ligeramente */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);/* Intensifica la sombra */
+}
+/* Imagen dentro de la tarjeta */
+.book-card img {
+    max-width: 80%;/* Limita el ancho máximo al 80% de la tarjeta */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.book-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+/* Texto del autor del libro */
+.book-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;/* Espaciado debajo del párrafo */
+}
+
+/* Botón de las cartas */
+.book-card button {
+    padding: 10px 20px;
+    background-color: #e890d3;/* Color de fondo del botón */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;/* Transición suave al cambiar el color */
+}
+/* Efecto al pasar el mouse sobre el botón */
+.book-card button:hover {
+    background-color: #c56b9d; /* Cambia el color de fondo a uno más oscuro */
+}
